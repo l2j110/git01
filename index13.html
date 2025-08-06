@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        function button_click() {
+            //        [0]       [1]        [2]        여기서는 배열인데 리스트랑 같음
+            let a = ['apple', 'banana', 'orange']
+            console.log(a);
+            console.log(a[2]);
+            console.log(a.length);  // len()
+
+            for (let i = 0; i<a.length; i++) {
+                console.log(a[i])
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <input type="button" value="클릭" onclick="button_click()">
+</body>
+</html>
