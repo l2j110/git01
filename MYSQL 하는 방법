@@ -1,0 +1,50 @@
+pip install mysql-connector-python==9.0.0
+pip install SQLAlchemy==2.0.32
+
+
+use test_db
+-- 이걸 사용한다
+
+select * from address
+-- 가져와 다 어디서 address에서
+
+create database test_db
+-- 공간 만들기
+
+
+create table blog (
+	id 			integer auto_increment primary key, 	-- int, 자동으로 숫자 올라감, 겹치지 않음
+    title		varchar(200) not null,			   		-- str, 필수로 채워야 함
+	author  	varchar(200) not null, 
+    content 	varchar(4000) not null, 
+    image_loc 	varchar(100) null,						-- str, 안 채워도 됨
+    modified_dt datetime not null						-- 시간, 안 채워도 됨
+); 
+
+
+desc blog;
+-- 테이블 구조 보기
+
+
+-- insert into blog(title, author, content, modified_dt)
+-- values('FastAPI란?', '둘리', 'FastAPI란 어쩌구 저쩌구', now());
+
+select * from blog;
+
+
+-- insert into blog(title, author, content, modified_dt)
+-- values('FastAPI란?', '둘리', 'FastAPI란 어쩌구 저쩌구', now());
+
+-- select * from blog; 
+commit; 
+-- 얘가 확인 비슷한 거
+
+
+
+-- insert into blog(title, author, content, modified_dt)
+-- values('hello', 'bob', 'FastAPI is Fast API', now());
+ 
+-- select * from blog;  
+commit;  
+
+
