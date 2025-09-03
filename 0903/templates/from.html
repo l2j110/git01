@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 정보</title>
+</head>
+<body>
+    <form action="/result" method="post">
+        <table>
+        <tr>
+            <td><lable for="username">이름</lable></td>
+            <td><input id="username" type="text" name="username" /></td>
+        </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input id="nam" type="radio" name="gender" value="m" />
+                    <label for="nam">남자</label>
+                    <input id="wonam" type="radio" name="gender" value="w" />
+                    <label for="wonam">여자</label>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="가입">
+    </form>
+</body>
+</html>
