@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>버스 요금 계산기</title>
+</head>
+<body>
+<h1>버스 요금 계산기</h1>
+    <form method="post" action="/result">
+        <p>
+            지불 방법:
+            <label><input type="radio" name="method" value="card" checked> 교통카드</label>
+            <label><input type="radio" name="method" value="card"> 현금</label>
+        </p>
+
+        <p>
+            나이:
+            <input type="number" name="age" min="0" required> 세
+        </p>
+
+        <button type="submit">계산하기</button>
+    </form>
+
+    <hr>
+
+    <small>
+        요금(2024-01-13기준)<br>
+        교통카드: 성인1500 / 청소년 850 / 어린이 400<br>
+        현금 : 성인 1700 / 청소년 1000 / 어린이 500<br>
+    </small>
+</body>
+</html>

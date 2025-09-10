@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>계산 결과</title>
+</head>
+<body>
+    <h1>계산 결과</h1>
+
+    <p>지불 방법: {{ '교통카드' if method == 'card' else '현금' }}</p>
+    <p>나이: {{ age }}</p>
+    <p>대상: {{ target }}</p>
+    <p>요금: {{ fare }}원</p>
+
+    <p><a href="/">다시 계산하기</a> </p>
+</body>
+</html>
