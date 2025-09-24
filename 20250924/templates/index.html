@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>음식 주문 계산기</title>
+</head>
+<body>
+<h1>음식 주문 계산기</h1>
+
+    <form method="post" action="/result">
+        <p>
+            메뉴 선택:<br>
+            <label><input type="checkbox" name="menu" value="pizza"> 피자(12000원)</label><br>
+            <label><input type="checkbox" name="menu" value="chicken"> 치킨(15000원)</label><br>
+            <label><input type="checkbox" name="menu" value="cola"> 콜라(2000원)</label><br>
+            <label><input type="checkbox" name="menu" value="beer"> 맥주(4000원)</label><br>
+        </p>
+        <p>
+            할인 적용:
+            <label><input type="radio" name="discount" value="none" checked>없음</label>
+            <label><input type="radio" name="discount" value="student">학생(10%)</label>
+            <label><input type="radio" name="discount" value="member">회원(20%)</label>
+        </p>
+        <button type="submit">계산하기</button>
+    </form>
+<hr>
+    <small>
+        가격(2024-01-13기준)<br>
+        피자12000/치킨15000/콜라2000/맥주4000
+    </small>
+</body>
+</html>
