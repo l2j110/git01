@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 50px);
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        .day {
+            border: 1px solid #aaa;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            border-radius: 5px;
+        }
+        .day:hover {
+            background-color: #e0f0ff;
+        }
+        .selected {
+            background-color: #bde0ff;
+            font-weight: bold
+        }
+    </style>
+</head>
+<body>
+    <h1>일정 관리</h1>
+    <h2>{{ year }}년 {{ '%02d' % month }}월</h2>
+    <div class="calendar">
+        {% for i in range(1, num_days+1) %}
+            {% set day_str = "%04d-%02d-%02d" % (year, month, i) %}
+            <a class="day {% if selected_date == day_str %}selected{% endif %}"
+               href="/?year={{ year }}&month={{ month }}&date={{ day_str }}">{{ i }}</a>
+        {% endfor %}
+    </div>
+</body>
+</html>
