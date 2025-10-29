@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원등록</title>
+</head>
+<body>
+<h1>회원 등록</h1>
+
+<form action="{{ url_for('add') }}" method = 'post'>
+    <div>
+        <label>이름* : <input type="text" name="name" required></label>
+    </div>
+    <div>
+        <label>전화번호 : <input type="text" name="phone"></label>
+    </div>
+    <div>
+        <label>주소 : <input type="text" name="address" size="50"></label>
+    </div>
+    <div>
+        <label>수강과목 : <input type="text" name="course"></label>
+    </div>
+    <div>
+        <button type="submit">등록</button>
+    </div>
+</form>
+
+<hr>
+
+<h2>등록된 회원</h2>
+
+{% if rows %}
+<table>
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+        <th>수강과목</th>
+        <th>삭제</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for id, name, phone, address, course in rows %}
+    <tr>
+        <td>{{ id }}</td>
+        <td>{{ name }}</td>
+        <td>{{ phone }}</td>
+        <td>{{ address }}</td>
+        <td>{{ course }}</td>
+        <td>
+            <form action="{{ url_for('delete', mid=id) }}" method="post" onsubmit="return confirm('삭제할까요?');">
+                <button type="submit">삭제</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>아직 등록된 회원이 없어요.</p>
+{% endif %}
+</body>
+</html>
