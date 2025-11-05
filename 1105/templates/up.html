@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>파일 업로드</title>
+</head>
+<body>
+<h2>파일 업로드</h2>
+    <!--파일 업로드 할 때는 무조건 이렇게-->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="fname">
+        <input type="submit" value="업로드">
+    </form>
+</body>
+</html>
