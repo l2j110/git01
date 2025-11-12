@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>파일 업로드</title>
+</head>
+<body>
+    <h2>http://192.168.0.123:8100/</h2>
+    <h2>파일 업로드</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="fname">
+        <input type="submit" value="업로드">
+    </form>
+    <hr>
+    <h2>파일 다운로드</h2>
+
+    <ul id="file-list"></ul>
+    <script>
+        async function fetchFile() {
+            try {
+                const response = await fetch('/list');
+                const files = await response.json();
+                const List = document.getElementById('file-list');
+
+                files.forEach(file => {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = `/download/${file}`;
+                    link.innerText = file;
+                    link.download = file;
+                    listItem.appendChild(link);
+                    List.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('파일을 불러오는데 실패했습니다:', error);
+            }
+        }
+        fetchFile();
+    </script>
+
+
+</body>
+</html>
