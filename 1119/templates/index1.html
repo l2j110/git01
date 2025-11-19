@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무슨 가계부</title>
+</head>
+<body>
+<h1>가계부</h1>
+<form action="/upload"></form>
+    <p>날짜: <input type="date" name="date"></p>
+    <p>항목: <input type="text" name="product"></p>
+    <p>금액: <input type="number" name="price"></p>
+    <input type="submit" value="추가">
+
+<hr>
+
+<h2>목록</h2>
+
+{{ date }} | {{ product }} | {{ price }} <a href="http://delete<date>>">삭제</a>
+
+</body>
+</html>
